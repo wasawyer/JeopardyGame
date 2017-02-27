@@ -105,14 +105,15 @@ def PopulateCategory(category, round_string):
         if time.time() - start_time > max_time_out:
             print "Couldn't populate questions for category:", category, "and round:", round_string
             return []
+        # Make sure question is in right category, round, and a value not already gotten
         for x in range(index,upper_bound):
-            if master_list[x][1] == category and master_list[x][2] in values:
+            if master_list[x][1] == category and master_list[x][0] == round_string and master_list[x][2] in values:
                 category_questions = InsertQuestion(category_questions, master_list[x], round_string)
                 values.remove(master_list[x][2])
                 if len(values) == 0:
                     return category_questions
         for x in range(0,index):
-            if master_list[x][1] == category and master_list[x][2] in values:
+            if master_list[x][1] == category and master_list[x][0] == round_string and master_list[x][2] in values:
                 category_questions = InsertQuestion(category_questions, master_list[x], round_string)
                 values.remove(master_list[x][2])
                 if len(values) == 0:

@@ -53,7 +53,7 @@ def PlayRoundWithBoard(board):
         #     print 10-sleeps, "Seconds left"
         #     time.sleep(1)
         #     sleeps +=1
-        myinput("Press any button when ready for answer: ")
+        myinput("Press any button (except realistically only Enter) when ready for answer: ")
         print "\n\n", board[col][row][4], "\n\n"
         sk.CheckAndUpdateScores(questionValue)
         sk.PrintScores()
@@ -68,9 +68,9 @@ def PlayFinalJeopardyWithBoard(board):
     sk.PrintScores()
     sk.ManageWagers()
     print "\n\n"
-    myinput("Press any button when ready for question: ")
+    myinput("Press any button (as long as it is Enter) when ready for question: ")
     print "\n\n", board[0][0][3], "\n\n"
-    myinput("Press any button when ready for answer: ")
+    myinput("Press any button (AKA Enter, you know the drill) when ready for answer: ")
     print "\n\n", board[0][0][4], "\n\n"
     sk.CheckAndUpdateFinalScores()
     sk.PrintFinalStandings()
